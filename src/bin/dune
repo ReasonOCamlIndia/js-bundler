@@ -1,0 +1,4 @@
+(executable
+ (public_name js_bundler)
+ (name main)
+ (libraries js_bundler))

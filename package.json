@@ -1,0 +1,36 @@
+{
+  "name": "js-bundler",
+  "version": "0.1.0",
+  "description": "Pack JS code",
+  "esy": {
+    "build": "dune build -p #{self.name}"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@opam/reason": "*",
+    "@opam/flow_parser": "*",
+    "@opam/base": "*",
+    "@opam/sedlex": "*",
+    "@opam/cmdliner": "*",
+    "@opam/containers": "*",
+    "@opam/dune": "*",
+    "@opam/fileutils": "*",
+    "@opam/fmt": "*",
+    "@opam/logs": "*",
+    "@opam/lwt": "*",
+    "@opam/lwt_ppx": "*",
+    "@opam/merlin": "*",
+    "@opam/ppx_deriving": "*",
+    "@opam/ppx_expect": "*",
+    "@opam/ppx_let": "*",
+    "@opam/re": "*",
+    "@opam/sequence": "*",
+    "@opam/utop": "*",
+    "@opam/wtf8": "*",
+    "@opam/yojson": "*",
+    "chalk": "^2.4.1",
+    "fs-extra": "^7.0.0",
+    "loader-runner": "^2.3.1",
+    "ocaml": "5.1.x"
+  }
+}
