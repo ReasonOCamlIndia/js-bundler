@@ -1,20 +1,26 @@
-
-
-let parse_source = source => {
+let parse = source => {
   let parse_options =
     Some(
-      Flow_parser.Parser_env.{
-        esproposal_nullish_coalescing: false,
-        esproposal_optional_chaining: false,
-        esproposal_class_instance_fields: true,
-        esproposal_class_static_fields: true,
-        esproposal_decorators: true,
-        esproposal_export_star_as: true,
-        types: true,
-        types_in_comments: false,
+      Parser_env.{
+        components: false,
+        enums: false,
+        esproposal_decorators: false,
+        types: false,
         use_strict: false,
+        module_ref_prefix: None,
+        module_ref_prefix_LEGACY_INTEROP: None,
       },
     );
-
-  Flow_parser.Parser_flow.program(source, ~parse_options);
+  Parser_flow.program(source, ~parse_options);
 };
+
+let source = {|
+   console.log("Hello, World.");
+|};
+
+let print = ast => {
+  Flow_ast.(Program.show(Loc.pp, Loc.pp, ast));
+};
+
+let (ast, _errors) = parse(source);
+ast |> print |> print_endline;
